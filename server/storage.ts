@@ -1,38 +1,63 @@
-import { users, type User, type InsertUser } from "@shared/schema";
+import { type Session, type InsertSession, type UserProgress, type InsertUserProgress } from "@shared/schema";
 
-// modify the interface with any CRUD methods
-// you might need
-
+// Storage interface for Pomia Pomodoro timer
 export interface IStorage {
-  getUser(id: number): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  // Session methods
+  createSession(session: InsertSession): Promise<Session>;
+  getSessions(): Promise<Session[]>;
+  
+  // User progress methods
+  getUserProgress(): Promise<UserProgress | undefined>;
+  updateUserProgress(progress: InsertUserProgress): Promise<UserProgress>;
 }
 
 export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  currentId: number;
+  private sessions: Map<number, Session>;
+  private userProgress: UserProgress | null;
+  private currentSessionId: number;
 
   constructor() {
-    this.users = new Map();
-    this.currentId = 1;
+    this.sessions = new Map();
+    this.userProgress = null;
+    this.currentSessionId = 1;
   }
 
-  async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+  async createSession(insertSession: InsertSession): Promise<Session> {
+    const id = this.currentSessionId++;
+    const session: Session = {
+      id,
+      duration: insertSession.duration,
+      actualDuration: insertSession.actualDuration ?? null,
+      memo: insertSession.memo ?? null,
+      points: insertSession.points ?? 0,
+      completed: insertSession.completed ?? false,
+      startedAt: new Date(),
+      completedAt: null,
+    };
+    this.sessions.set(id, session);
+    return session;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
+  async getSessions(): Promise<Session[]> {
+    return Array.from(this.sessions.values()).sort((a, b) => 
+      new Date(b.startedAt).getTime() - new Date(a.startedAt).getTime()
     );
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async getUserProgress(): Promise<UserProgress | undefined> {
+    return this.userProgress || undefined;
+  }
+
+  async updateUserProgress(progress: InsertUserProgress): Promise<UserProgress> {
+    const updatedProgress: UserProgress = {
+      id: 1,
+      totalPoints: progress.totalPoints ?? 0,
+      totalSessions: progress.totalSessions ?? 0,
+      totalHours: progress.totalHours ?? 0,
+      currentStreak: progress.currentStreak ?? 0,
+    };
+    this.userProgress = updatedProgress;
+    return updatedProgress;
   }
 }
 
