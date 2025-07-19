@@ -6,6 +6,21 @@ A modern, gamified Pomodoro timer web application that helps users manage focuse
 ![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20TypeScript%20%7C%20Express-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+## 📸 Preview
+
+Two previews:
+
+1) Timer - Main timer interface with circular progress indicator and session controls*
+2) History Session - showing completed Pomodoro sessions with points and statistics*
+
+
+### Key Features in Action
+
+| Feature | Screenshot |
+|---------|------------|
+| Pomia Timer Display | ![Timer](images/timer.png) |
+| Pomia Session History Notes | ![Notes](images/history.png) |
+
 ## ✨ Features
 
 ### 🎯 Core Timer Functionality
