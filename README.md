@@ -6,7 +6,7 @@ A modern, gamified Pomodoro timer web application that helps users manage focuse
 ![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20TypeScript%20%7C%20Express-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-## 📸 Preview
+## Preview
 
 Two previews:
 
@@ -21,33 +21,33 @@ Two previews:
 | Pomia Timer Display | ![Timer](images/timer.png) |
 | Pomia Session History Notes | ![Notes](images/history.png) |
 
-## ✨ Features
+## Features
 
-### 🎯 Core Timer Functionality
+### Core Timer Functionality
 - **Customizable Durations**: Quick presets (15min, 25min, 1hr) plus custom timer settings
 - **Pause & Resume**: Full control over your work sessions
 - **Audio Notifications**: Sound alerts when sessions complete using Web Audio API
 - **Visual Progress**: Beautiful circular progress indicator with real-time countdown
 
-### 🎮 Gamification System
+### Gamification System
 - **Point Rewards**: Earn 2-25 points based on session duration
 - **Memo Bonus**: Full points for sessions with notes, 60% for sessions without
 - **Progress Tracking**: Visual progress bar showing points earned out of 100
 - **Achievement Statistics**: Track completed sessions, total hours, and current streak
 
-### 📊 Session Management
+### Session Management
 - **Session History**: Detailed view of all past Pomodoro sessions
 - **Progress Notes**: Add memos to document what you accomplished
 - **Statistics Dashboard**: Overview of productivity metrics and achievements
 - **Offline Support**: All data persisted locally using browser storage
 
-### 🎨 User Experience
+### User Experience
 - **Clean Interface**: Inspired by Forest app and Be Focused Pro
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **Custom Color Scheme**: Tomato red primary, forest green secondary, clean whites
 - **Intuitive Navigation**: Simple tab-based navigation between Timer and History
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
 - **React 18** with TypeScript for component-based UI
@@ -73,7 +73,7 @@ Two previews:
 - **ESBuild** for production bundling
 - **Drizzle Kit** for database schema management
 
-## 🏗 System Architecture
+## System Architecture
 
 ```
 ┌─────────────────────────────────────────┐
@@ -105,7 +105,7 @@ Two previews:
 └─────────────────────────────────────────┘
 ```
 
-## 🚀 Local Setup Instructions
+## Local Setup Instructions
 
 ### Prerequisites
 - **Node.js** (version 18 or higher)
@@ -190,7 +190,7 @@ Two previews:
    npm run dev
    ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 pomia/
@@ -225,7 +225,7 @@ pomia/
 └── README.md               # This file
 ```
 
-## 🎮 How to Use
+## How to Use
 
 ### Starting a Pomodoro Session
 
@@ -247,7 +247,7 @@ pomia/
 - **Memo Bonus**: Full points for sessions with notes, 60% points without notes
 - **Calculation**: `Math.min(Math.max(Math.floor(duration_minutes / 5), 2), 25)`
 
-## 🔧 Available Scripts
+## Available Scripts
 
 ```bash
 # Start development server (frontend + backend)
@@ -267,7 +267,7 @@ npx drizzle-kit generate
 npx drizzle-kit migrate
 ```
 
-## 🌟 Future Enhancements
+## Future Enhancements
 
 ### Planned Features
 - **User Authentication**: Account system for cross-device synchronization
@@ -284,7 +284,7 @@ npx drizzle-kit migrate
 - **Caching Strategy**: Redis integration for improved performance
 - **CI/CD Pipeline**: Automated testing and deployment
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -292,11 +292,11 @@ npx drizzle-kit migrate
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Inspired by the Pomodoro Technique developed by Francesco Cirillo
 - UI design influenced by Forest app and Be Focused Pro
@@ -305,6 +305,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Happy focusing! 🍅⏱️**
+**Happy focusing!**
 
 > "The secret of getting ahead is getting started." - Mark Twain
